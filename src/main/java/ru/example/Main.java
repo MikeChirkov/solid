@@ -1,21 +1,20 @@
 package ru.example;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     private static final String LINE = "----------------------";
+
     public static void main(String[] args) {
         Shop shop = new Shop();
         Order order = new Order();
         Scanner sc = new Scanner(System.in);
 
-        while(true){
+        while (true) {
             printMenu();
             System.out.print("Введите номер действия: ");
             int n = sc.nextInt();
-            switch (n){
+            switch (n) {
                 case 0:
                     return;
                 case 1:
@@ -26,9 +25,9 @@ public class Main {
                             "2. Смартфоны");
                     System.out.print("Введите номер действия:");
                     n = sc.nextInt();
-                    if(n == 1){
+                    if (n == 1) {
                         shop.getProductByType(PhoneType.BUTTON_PHONE).forEach(Product::print);
-                    }else if (n == 2){
+                    } else if (n == 2) {
                         shop.getProductByType(PhoneType.SMARTPHONE).forEach(Product::print);
                     }
                     break;
@@ -37,9 +36,9 @@ public class Main {
                             "2. Смарт-часы");
                     System.out.print("Введите номер действия:");
                     n = sc.nextInt();
-                    if(n == 1){
+                    if (n == 1) {
                         shop.getProductByType(WatchType.SIMPLE_WATCH).forEach(Product::print);
-                    }else if (n == 2){
+                    } else if (n == 2) {
                         shop.getProductByType(WatchType.SMARTWATCH).forEach(Product::print);
                     }
                     break;
@@ -68,7 +67,7 @@ public class Main {
         }
     }
 
-    public static void printMenu(){
+    public static void printMenu() {
         System.out.println(LINE);
         System.out.println("Магазин телефонов и часов \n" +
                 "Возможные действия: \n" +

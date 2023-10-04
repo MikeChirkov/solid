@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private int totalCost;
     private final List<Product> productList;
+    private int totalCost;
 
     public Order() {
         productList = new ArrayList<>();
